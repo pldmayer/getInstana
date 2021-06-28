@@ -1,0 +1,22 @@
+@hostname = https://timequantum-timequantum.instana.io
+@apikey = DgrUeQFQRS2cjb4hwo1Ljw
+@hostname1 = https://apm-santova.instana.io
+@apikey1 = rhjbN04BSZaIDQCGR_7pvQ
+GET http://localhost/coim_php/api.php HTTP/1.1
+
+###
+
+GET {{hostname1}}/api/events HTTP/1.1
+Authorization: apitoken {{apikey1}}
+Content-Type: application/json
+
+#####
+GET {{hostname}}/api/custom-dashboard/shareable-api-tokens HTTP/1.1
+Authorization: apitoken {{apikey}}
+Content-Type: application/json
+
+#####
+
+GET {{hostname1}}/api/instana/health HTTP/1.1
+Authorization: apitoken {{apikey1}}
+Content-Type: application/json
